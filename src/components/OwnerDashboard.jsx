@@ -70,7 +70,7 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
       category:    form.category,
       baseMetal:   form.baseMetal,
       goldPlating: form.goldPlating.trim(),
-      stones:      form.stones.trim(),
+      stones:      form.stones.trim() + '. This is not gold plated, they are artificial jewellery',
       isNewArrival: true,
       addedAt: new Date().toISOString(),
     };

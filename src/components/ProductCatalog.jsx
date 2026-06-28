@@ -101,7 +101,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Faux Pearls & CZ Crystals',
+    stones: 'Faux Pearls & CZ Crystals. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_1210',
@@ -113,7 +113,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'High-Grade Brass',
     goldPlating: 'Premium Gold Plated Finish',
-    stones: 'Synthetic Emeralds & Rubies',
+    stones: 'Synthetic Emeralds & Rubies. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_1140',
@@ -125,7 +125,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Imitation Alloy',
     goldPlating: 'Heavy Duty Gold Plated Finish',
-    stones: 'Synthetic Emeralds & Rubies',
+    stones: 'Synthetic Emeralds & Rubies. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2240',
@@ -137,7 +137,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated (Imitation)',
-    stones: 'Synthetic Blue Sapphires & Micro-Pearls',
+    stones: 'Synthetic Blue Sapphires & Micro-Pearls. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2241',
@@ -149,7 +149,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Imitation Alloy',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Synthetic Emeralds & Glass Polki',
+    stones: 'Synthetic Emeralds & Glass Polki. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2245',
@@ -161,7 +161,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Imitation Alloy',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'CZ Diamonds & Faux Emeralds',
+    stones: 'CZ Diamonds & Faux Emeralds. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2246',
@@ -173,7 +173,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Synthetic Blue Sapphires & Faux Pearl Drops',
+    stones: 'Synthetic Blue Sapphires & Faux Pearl Drops. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2249',
@@ -185,7 +185,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Imitation Alloy',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Glass Kundan & Faux Ruby Cabochons',
+    stones: 'Glass Kundan & Faux Ruby Cabochons. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_1130',
@@ -197,7 +197,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Synthetic Rubies & Emeralds',
+    stones: 'Synthetic Rubies & Emeralds. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_1175',
@@ -209,7 +209,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Glass Kundan & Faux Emerald Cabochons',
+    stones: 'Glass Kundan & Faux Emerald Cabochons. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2242',
@@ -221,7 +221,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Glass Kundan & Faux Pearl Drops',
+    stones: 'Glass Kundan & Faux Pearl Drops. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2243',
@@ -233,7 +233,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Imitation Alloy',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Faux Pearls & Synthetic Ruby Drops',
+    stones: 'Faux Pearls & Synthetic Ruby Drops. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2244',
@@ -245,7 +245,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Antique Gold Plated Finish',
-    stones: 'Glass Kundan & Faux Emerald Beads',
+    stones: 'Glass Kundan & Faux Emerald Beads. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2247',
@@ -257,7 +257,7 @@ const MANUAL_PRODUCTS = [
     category: 'Bangles',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plating (Imitation)',
-    stones: 'Synthetic Emeralds & Faux Polki',
+    stones: 'Synthetic Emeralds & Faux Polki. This is not gold plated, they are artificial jewellery',
   },
   {
     id: 'dno_2248',
@@ -269,7 +269,7 @@ const MANUAL_PRODUCTS = [
     category: 'Earrings',
     baseMetal: 'Premium Brass Base',
     goldPlating: 'Micron Gold Plated Finish',
-    stones: 'Faux Seed Pearls & Synthetic Ruby Glass',
+    stones: 'Faux Seed Pearls & Synthetic Ruby Glass. This is not gold plated, they are artificial jewellery',
   },
 ];
 
