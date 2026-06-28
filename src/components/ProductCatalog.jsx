@@ -409,6 +409,9 @@ export default function ProductCatalog({
                   <span>Stones:</span>
                   <span>{product.stones || 'Premium CZ & Faux Pearls'}</span>
                 </div>
+                <div style={{ color: 'var(--primary-gold)', fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.5px', marginTop: '6px', fontStyle: 'italic', textAlign: 'left' }}>
+                  * This is not gold plated, they are artificial jewellery
+                </div>
 
                 <div style={{ margin: '12px 0 6px', fontSize: '0.85rem', color: 'var(--primary-gold)', fontWeight: 500, letterSpacing: '0.5px' }}>
                   Price Available on Request
@@ -534,6 +537,9 @@ export default function ProductCatalog({
                     <div className="product-spec"><span>Base Metal:</span><span>{selectedProduct.baseMetal}</span></div>
                     <div className="product-spec"><span>Plating/Finish:</span><span>{selectedProduct.goldPlating || 'Micron Gold Plated'}</span></div>
                     <div className="product-spec"><span>Stones:</span><span>{selectedProduct.stones || 'Premium CZ & Faux Pearls'}</span></div>
+                    <div style={{ color: 'var(--primary-gold)', fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.5px', marginTop: '8px', fontStyle: 'italic', textAlign: 'left' }}>
+                      * This is not gold plated, they are artificial jewellery
+                    </div>
                   </div>
 
                   {/* Price note */}
