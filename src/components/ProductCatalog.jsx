@@ -3,9 +3,18 @@ import { Eye, MessageCircle, X, Search, ShieldAlert, Sparkles, Award } from 'luc
 import BespokeCustomizer from './BespokeCustomizer';
 import VirtualTryOn from './VirtualTryOn';
 
+export const resolveAsset = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL || '/'}${cleanPath}`;
+};
+
 // ── 50 UNIQUE jewelry images — no two are identical ──
 // Sources: 13 local shop assets + 37 curated Unsplash jewelry photo IDs
-const UNIQUE_50 = [
+const RAW_UNIQUE_50 = [
   // ── 13 Local shop assets (confirmed jewelry photos) ──
   '/assets/dno_195.jpg',
   '/assets/dno_1130.jpg',
@@ -64,6 +73,7 @@ const UNIQUE_50 = [
   'https://images.unsplash.com/photo-1624548638222-d6ae4cbc7e04?auto=format&fit=crop&w=600&q=80',
   'https://images.unsplash.com/photo-1631211760049-bc83b04f7cd1?auto=format&fit=crop&w=600&q=80',
 ];
+const UNIQUE_50 = RAW_UNIQUE_50.map(resolveAsset);
 // Sanity-check: UNIQUE_50 must have exactly 50 entries
 // (13 local + 37 Unsplash = 50)
 
@@ -324,7 +334,10 @@ const MANUAL_PRODUCTS = [
 ];
 
 // Only the handcrafted manual catalog items
-const ALL_PRODUCTS = [...MANUAL_PRODUCTS];
+const ALL_PRODUCTS = MANUAL_PRODUCTS.map(prod => ({
+  ...prod,
+  image: resolveAsset(prod.image)
+}));
 
 const CATEGORIES = ['All', 'Necklace Sets', 'Earrings', 'Bangles', 'Bracelets'];
 
@@ -417,7 +430,7 @@ export default function ProductCatalog({
                     alt={product.name} 
                     className="product-image" 
                     onError={(e) => {
-                      e.target.src = '/assets/dno_195.jpg';
+                      e.target.src = resolveAsset('/assets/dno_195.jpg');
                       e.target.onerror = null;
                     }}
                   />
@@ -510,7 +523,7 @@ export default function ProductCatalog({
                     <img
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
-                      onError={(e) => { e.target.src = '/assets/dno_195.jpg'; e.target.onerror = null; }}
+                      onError={(e) => { e.target.src = resolveAsset('/assets/dno_195.jpg'); e.target.onerror = null; }}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   ) : (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, RotateCcw, Heart, Eye } from 'lucide-react';
+import { resolveAsset } from './ProductCatalog';
 
 export default function StylingConcierge({ onSelectProduct }) {
   const [step, setStep] = useState(1);
@@ -58,7 +59,7 @@ export default function StylingConcierge({ onSelectProduct }) {
       category: 'Necklace Sets',
       description: 'An elegant long rani haar necklace composed of five layers of premium round pearls.'
     }
-  ];
+  ].map(p => ({ ...p, image: resolveAsset(p.image) }));
 
   const handleSelect = (key, value) => {
     setSelections(prev => ({ ...prev, [key]: value }));

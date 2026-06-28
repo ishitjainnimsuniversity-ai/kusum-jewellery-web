@@ -3,6 +3,7 @@ import {
   Plus, Trash2, Upload, Link2, ImageIcon,
   LogOut, Sparkles, Package, CheckCircle2, X, Eye,
 } from 'lucide-react';
+import { resolveAsset } from './ProductCatalog';
 
 const STORAGE_KEY = 'kusum_new_arrivals';
 
@@ -261,9 +262,9 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
                 <div key={item.id} style={s.arrRow}>
                   {/* Thumb */}
                   <div style={{ position: 'relative', flexShrink: 0 }}>
-                    <img src={item.image} alt={item.name}
+                    <img src={resolveAsset(item.image)} alt={item.name}
                       style={s.thumb}
-                      onError={e => { e.target.src = '/assets/dno_195.jpg'; e.target.onerror = null; }} />
+                      onError={e => { e.target.src = resolveAsset('/assets/dno_195.jpg'); e.target.onerror = null; }} />
                     <button style={s.eyeOverlay} title="Preview"
                       onClick={() => setPreviewModal(item)}>
                       <Eye size={13} />
@@ -312,9 +313,9 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
         <div style={s.modalBg} onClick={() => setPreviewModal(null)}>
           <div style={s.modalBox} onClick={e => e.stopPropagation()}>
             <button style={s.modalClose} onClick={() => setPreviewModal(null)}><X size={18} /></button>
-            <img src={previewModal.image} alt={previewModal.name}
+            <img src={resolveAsset(previewModal.image)} alt={previewModal.name}
               style={{ width: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '6px' }}
-              onError={e => { e.target.src = '/assets/dno_195.jpg'; e.target.onerror = null; }} />
+              onError={e => { e.target.src = resolveAsset('/assets/dno_195.jpg'); e.target.onerror = null; }} />
             <p style={{ color: '#D4AF37', fontWeight: 700, marginTop: '12px', textAlign: 'center' }}>
               {previewModal.name}
             </p>
