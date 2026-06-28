@@ -77,14 +77,14 @@ const UNIQUE_50 = RAW_UNIQUE_50.map(resolveAsset);
 // Sanity-check: UNIQUE_50 must have exactly 50 entries
 // (13 local + 37 Unsplash = 50)
 
-// Vimeo jewelry showcase clips (safe, no copyright issues)
+// Local jewelry showcase clips (safe and reliable, stored in repo assets)
 const VIDEOS = [
-  'https://player.vimeo.com/external/435674703.sd.mp4?s=7fdbc28e2297920ab8cf5af684534f3b7d14dfb0&profile_id=165&oauth2_token_id=57447761',
-  'https://player.vimeo.com/external/435674681.sd.mp4?s=4bbff63371946c76e27a692a35606dfca34d9526&profile_id=165&oauth2_token_id=57447761',
-  'https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c99cba7394856b00160538f9d02e0df4&profile_id=165&oauth2_token_id=57447761',
-  'https://player.vimeo.com/external/517602126.sd.mp4?s=df9aa5409a27eb276f5de0e35cf8c393782cf761&profile_id=165&oauth2_token_id=57447761',
-  'https://player.vimeo.com/external/435674697.sd.mp4?s=c8da7f607d79b9409893d9b15802264627bb1220&profile_id=165&oauth2_token_id=57447761',
-  'https://player.vimeo.com/external/517602220.sd.mp4?s=82c6114eb38e2d42df7cf86a0767c6decc0cf1c0&profile_id=165&oauth2_token_id=57447761',
+  resolveAsset('/assets/Graff.mp4'),   // Index 0: Luxury diamond showcase
+  resolveAsset('/assets/ARTryOn.mp4'),  // Index 1: Virtual try-on demo
+  resolveAsset('/assets/ARTryOn.mp4'),  // Index 2: Virtual try-on demo
+  resolveAsset('/assets/Graff.mp4'),   // Index 3: Luxury diamond showcase
+  resolveAsset('/assets/Graff.mp4'),   // Index 4: Luxury diamond showcase
+  resolveAsset('/assets/ARTryOn.mp4'),  // Index 5: Virtual try-on demo
 ];
 
 
