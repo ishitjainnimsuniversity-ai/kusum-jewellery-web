@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ishitjainnimsuniversity-ai.github.io/kusum-jewellery-web",
+  "homepage": "https://pixelblueprint54-hue.github.io/kusum-jewellery-web",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
