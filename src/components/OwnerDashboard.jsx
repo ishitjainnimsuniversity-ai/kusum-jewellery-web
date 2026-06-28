@@ -15,11 +15,13 @@ function saveNewArrivals(items) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 }
 
-const CATEGORIES = ['Necklace Sets', 'Earrings', 'Bangles', 'Bracelets'];
+const CATEGORIES = ['Earrings', 'Bangles'];
 const EMPTY = {
-  name: '', code: '', category: 'Necklace Sets', description: '',
+  name: '', code: '', category: 'Earrings', description: '',
   imageMode: 'upload', imageUrl: '', imageData: '',
-  weightGrams: '', baseMetal: 'Imitation Alloy',
+  baseMetal: 'Premium Brass Base',
+  goldPlating: 'Micron Gold Plated Finish',
+  stones: 'Faux Pearls & CZ Crystals',
 };
 
 export default function OwnerDashboard({ onLogout, onProductsChanged }) {
@@ -66,13 +68,9 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
       description: form.description.trim() || `Premium handcrafted ${form.category.toLowerCase()} piece.`,
       image,
       category:    form.category,
-      weightGrams: parseFloat(form.weightGrams) || 20,
       baseMetal:   form.baseMetal,
-      goldPlatingGrams: 0.5,
-      makingCharges: 2000,
-      stoneCharges:  1500,
-      baseMetalType: form.baseMetal === 'Silver (92.5%)' ? 'silver' : 'baseAlloy',
-      purityCertification: `${form.baseMetal} Base`,
+      goldPlating: form.goldPlating.trim(),
+      stones:      form.stones.trim(),
       isNewArrival: true,
       addedAt: new Date().toISOString(),
     };
@@ -150,9 +148,26 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
                 <label style={s.lbl}>Base Metal</label>
                 <select style={s.sel} value={form.baseMetal}
                   onChange={e => setForm(f => ({ ...f, baseMetal: e.target.value }))}>
+                  <option>Premium Brass Base</option>
                   <option>Imitation Alloy</option>
-                  <option>Silver (92.5%)</option>
+                  <option>Copper-Zinc Base</option>
                 </select>
+              </div>
+            </div>
+
+            {/* Plating/Finish + Stones */}
+            <div style={s.row2}>
+              <div>
+                <label style={s.lbl}>Plating / Finish *</label>
+                <input required style={s.inp} placeholder="e.g. Micron Gold Plated Finish"
+                  value={form.goldPlating}
+                  onChange={e => setForm(f => ({ ...f, goldPlating: e.target.value }))} />
+              </div>
+              <div>
+                <label style={s.lbl}>Stones *</label>
+                <input required style={s.inp} placeholder="e.g. Glass Kundan & Faux Pearls"
+                  value={form.stones}
+                  onChange={e => setForm(f => ({ ...f, stones: e.target.value }))} />
               </div>
             </div>
 
@@ -163,15 +178,6 @@ export default function OwnerDashboard({ onLogout, onProductsChanged }) {
                 placeholder="Describe this jewelry piece..."
                 value={form.description}
                 onChange={e => setForm(f => ({ ...f, description: e.target.value }))} />
-            </div>
-
-            {/* Weight */}
-            <div>
-              <label style={s.lbl}>Gross Weight (grams)</label>
-              <input style={{ ...s.inp, maxWidth: '160px' }} type="number" min="1" max="500"
-                placeholder="e.g. 25"
-                value={form.weightGrams}
-                onChange={e => setForm(f => ({ ...f, weightGrams: e.target.value }))} />
             </div>
 
             {/* IMAGE */}

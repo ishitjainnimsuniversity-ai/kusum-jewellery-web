@@ -155,7 +155,7 @@ export default function VirtualTryOn({ product, onClose }) {
             </span>
             <h3 className="modal-title" style={{ fontSize: '1.4rem', marginBottom: '8px' }}>Virtual Fitting Room</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '24px', fontWeight: 300 }}>
-              Adjust rotation and size scales using the sliders below to see how this piece fits standard necklaces, ears, or wristlines.
+              Adjust rotation and size scales using the sliders below to see how this piece fits standard ears or wristlines.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>

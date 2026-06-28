@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { X, Sparkles, MessageCircle, Info } from 'lucide-react';
 
 export default function BespokeCustomizer({ product, onClose }) {
-  const [baseMetal, setBaseMetal] = useState('alloy');
-  const [platingGrams, setPlatingGrams] = useState('1.5');
+  const [baseMetal, setBaseMetal] = useState('brass');
+  const [platingGrams, setPlatingGrams] = useState('standard');
   const [accentStone, setAccentStone] = useState('kundan');
   const [customNotes, setCustomNotes] = useState('');
 
   const metalsList = [
-    { id: 'alloy', label: 'Imitation Alloy (Standard)', desc: 'Lightweight brass-alloy base. Good durability.' },
-    { id: 'silver', label: '92.5 Sterling Silver (Premium)', desc: 'Noble base metal. Lifetime heirloom quality.' }
+    { id: 'brass', label: 'Premium Jewelers Brass Base', desc: 'Dense brass base. Ideal weight and excellent for gold plating.' },
+    { id: 'alloy', label: 'Imitation Alloy (Standard)', desc: 'Lightweight copper-alloy base. Good durability.' }
   ];
 
   const platingsList = [
-    { id: '1.2', label: '1.2 Grams (Standard Micron)', desc: 'Polished 24K gold plating for festive wear.' },
-    { id: '2.2', label: '2.2 Grams (Heavy Gold Vermeil)', desc: 'Extra thick plating depth. Highly resistant to tarnishing.' },
-    { id: '3.5', label: '3.5 Grams (Bridal Royal Vermeil)', desc: 'Double thickness. Supreme premium gold feel.' }
+    { id: 'standard', label: 'Standard Micron Plating', desc: 'Polished gold-colored plating for festive wear.' },
+    { id: 'antique', label: 'Antique Gold Finish', desc: 'Traditional dark-gold matte plating for heritage looks.' },
+    { id: 'premium', label: 'Premium Gold Plated (Imitation)', desc: 'Supreme premium gold color with protective anti-tarnish coating.' }
   ];
 
   const stonesList = [
@@ -154,7 +154,7 @@ export default function BespokeCustomizer({ product, onClose }) {
                 Additional Notes / Sizing Customization
               </label>
               <textarea 
-                placeholder="E.g. Ring size 14, bangle diameter 2.6 inches, or make necklace hanging drops red instead of green..."
+                placeholder="E.g. Bangle diameter 2.6 inches, or make earring hanging drops red instead of green..."
                 value={customNotes}
                 onChange={(e) => setCustomNotes(e.target.value)}
                 style={{

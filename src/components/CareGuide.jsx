@@ -21,7 +21,7 @@ export default function CareGuide() {
     {
       icon: <Star size={24} />,
       title: "Gentle Microfiber Buffing",
-      text: "After each wear, gently wipe your piece with a dry, lint-free microfiber cloth. Never use industrial silver cleaners or alcohol."
+      text: "After each wear, gently wipe your piece with a dry, lint-free microfiber cloth. Never use industrial metal polish, silver cleaners, or alcohol."
     }
   ];
 

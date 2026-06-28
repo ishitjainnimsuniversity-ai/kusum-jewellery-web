@@ -20,12 +20,12 @@ export default function StylingConcierge({ onSelectProduct }) {
       description: 'Handcrafted with intricate glass-set Kundan stones and delicate red-green meenakari backing.'
     },
     {
-      id: 'dno_2239',
-      code: 'D.no-2239',
-      name: 'Kundan Antique Choker Set',
-      image: '/assets/media__1782633530159.png',
-      category: 'Necklace Sets',
-      description: 'Classical choker set adorned with premium white glass Kundan work and hanging emerald beads.'
+      id: 'dno_2242',
+      code: 'D.no-2242',
+      name: 'Chandra Kundan Chandelier Jhumkas',
+      image: 'https://images.unsplash.com/photo-1629224316810-9d8805b95e76?auto=format&fit=crop&w=600&q=80',
+      category: 'Earrings',
+      description: 'Gorgeous crescent moon-shaped jhumkas set with glass kundan and finished with multiple rows of hanging faux pearls.'
     },
     {
       id: 'dno_2240',
@@ -41,23 +41,23 @@ export default function StylingConcierge({ onSelectProduct }) {
       name: 'Emerald & Polki Diamond Royal Kada',
       image: '/assets/emerald_kada.png',
       category: 'Bangles',
-      description: 'A heavy bridal gold-plated kada featuring hand-carved emerald stones and uncut polki accents.'
+      description: 'A heavy gold-plated imitation kada featuring hand-carved emerald stones and uncut polki accents.'
     },
     {
-      id: 'dno_2242',
-      code: 'D.no-2242',
-      name: 'Ruby & Sapphire Bridal Choker Set',
-      image: '/assets/ruby_choker.png',
-      category: 'Necklace Sets',
-      description: 'A stunning multi-gemstone bridal choker necklace combining rich rubies and blue sapphires.'
+      id: 'dno_195',
+      code: 'D.no-195',
+      name: 'Traditional Golden Jhumka Earrings',
+      image: '/assets/dno_195.jpg',
+      category: 'Earrings',
+      description: 'Elegant temple-style jhumka earrings featuring floral motifs, studded with green and red imitation stones, finished with delicate rows of hanging white faux pearls.'
     },
     {
       id: 'dno_2243',
       code: 'D.no-2243',
-      name: 'Classic Gold-Plated Pearl Rani Haar',
-      image: '/assets/pearl_rani_haar.png',
-      category: 'Necklace Sets',
-      description: 'An elegant long rani haar necklace composed of five layers of premium round pearls.'
+      name: 'Vilasini Multi-Layer Pearl Ear Drops',
+      image: 'https://images.unsplash.com/photo-1569397240109-c9a37b6b47c5?auto=format&fit=crop&w=600&q=80',
+      category: 'Earrings',
+      description: 'An elegant long chandelier earring set composed of multiple layers of premium faux pearls connected to a royal gold-plated center medallion.'
     }
   ].map(p => ({ ...p, image: resolveAsset(p.image) }));
 
@@ -75,15 +75,15 @@ export default function StylingConcierge({ onSelectProduct }) {
   const getRecommendation = () => {
     const { occasion, neckline, color } = selections;
     if (color === 'red' || occasion === 'wedding') {
-      return productsCatalog.find(p => p.id === 'dno_2242') || productsCatalog[1]; // Ruby Choker
+      return productsCatalog.find(p => p.id === 'dno_195') || productsCatalog[4]; // Traditional Golden Jhumka
     }
     if (color === 'green' || occasion === 'festive') {
-      return productsCatalog.find(p => p.id === 'dno_2239') || productsCatalog[1]; // Kundan/Emerald Choker
+      return productsCatalog.find(p => p.id === 'dno_2241') || productsCatalog[3]; // Emerald/Polki Kada
     }
     if (neckline === 'offShoulder' || occasion === 'party') {
       return productsCatalog.find(p => p.id === 'dno_2240') || productsCatalog[2]; // Sapphire Chandelier
     }
-    return productsCatalog.find(p => p.id === 'dno_2243') || productsCatalog[5]; // Pearl Rani Haar
+    return productsCatalog.find(p => p.id === 'dno_2243') || productsCatalog[5]; // Vilasini Pearl Drops
   };
 
   const recommendedProduct = step === 4 ? getRecommendation() : null;

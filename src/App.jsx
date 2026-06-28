@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
-import LiveRates from './components/LiveRates';
 import ProductCatalog from './components/ProductCatalog';
 import ContactUs from './components/ContactUs';
 import StylingConcierge from './components/StylingConcierge';
@@ -23,54 +22,11 @@ export default function App() {
   const [adminOpen,    setAdminOpen]    = useState(false);
   const [ownerAuthed,  setOwnerAuthed]  = useState(false);
   const [newArrivals,  setNewArrivals]  = useState(loadNewArrivals);
-  
-  // Live rates state passed down to calculate catalog prices reactively
-  const [rates, setRates] = useState({
-    gold24k: 7200,
-    gold22k: 6600,
-    silver: 90,
-    baseAlloy: 5
-  });
 
   // Apply theme class to document body dynamically
   useEffect(() => {
     document.body.className = `theme-${theme}`;
   }, [theme]);
-
-  // Fetch real market gold and silver spot rates dynamically
-  useEffect(() => {
-    const fetchRealRates = async () => {
-      try {
-        const responseGold = await fetch('https://api.gold-api.com/price/XAU');
-        const dataGold = await responseGold.json();
-        const goldUsdOunce = dataGold.price;
-        
-        const responseSilver = await fetch('https://api.gold-api.com/price/XAG');
-        const dataSilver = await responseSilver.json();
-        const silverUsdOunce = dataSilver.price;
-        
-        if (goldUsdOunce && silverUsdOunce) {
-          const usdToInr = 83.6; // Current USD/INR spot rate
-          const goldPerGram24k = (goldUsdOunce / 31.1035) * usdToInr;
-          const goldPerGram22k = goldPerGram24k * 0.916; // 22K ratio
-          const silverPerGram = (silverUsdOunce / 31.1035) * usdToInr;
-          
-          setRates(prev => ({
-            ...prev,
-            gold24k: Math.round(goldPerGram24k),
-            gold22k: Math.round(goldPerGram22k),
-            silver: Math.round(silverPerGram * 10) / 10
-          }));
-        }
-      } catch (error) {
-        console.warn("Failed to fetch live spot prices. Using high-precision seeds.", error);
-      }
-    };
-    
-    fetchRealRates();
-    const interval = setInterval(fetchRealRates, 60000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleEnterBoutique = () => {
     setShowWelcome(false);
@@ -93,27 +49,7 @@ export default function App() {
         <div className="bg-particles"></div>
         <div className="bg-vignette"></div>
 
-        {/* Live Rates Ticker Bar */}
-        <div className="ticker-bar">
-          <div className="ticker-items">
-            <div className="ticker-item">
-              <span className="ticker-label">Gold 24K Index:</span>
-              <span className="ticker-value">₹{rates.gold24k}/g</span>
-            </div>
-            <div className="ticker-item">
-              <span className="ticker-label">Gold 22K Index:</span>
-              <span className="ticker-value">₹{rates.gold22k}/g</span>
-            </div>
-            <div className="ticker-item">
-              <span className="ticker-label">Silver Index:</span>
-              <span className="ticker-value">₹{rates.silver}/g</span>
-            </div>
-          </div>
-          <div style={{ color: 'var(--primary-gold)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '2px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ width: '6px', height: '6px', backgroundColor: '#4caf50', borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 8px #4caf50' }}></span>
-            Real-Time Valuation Feed Active
-          </div>
-        </div>
+
 
         {/* Header */}
         <header className="main-header">
@@ -131,12 +67,6 @@ export default function App() {
               onClick={() => scrollToSection('home')}
             >
               Home
-            </a>
-            <a 
-              className={`nav-link ${activeSection === 'rates' ? 'active' : ''}`}
-              onClick={() => scrollToSection('rates')}
-            >
-              Valuations
             </a>
             <a 
               className={`nav-link ${activeSection === 'catalog' ? 'active' : ''}`}
@@ -206,8 +136,8 @@ export default function App() {
             </h1>
             
             <p className="hero-desc">
-              Discover Mumbai's premium gold-plated bridal sets, antique jhumkas, and temple bangles. 
-              Meticulously sculpted on fine sterling silver or high-grade alloy bases. Redefining royal elegance at accessible valuations.
+              Discover Mumbai's premium gold-plated artificial bangles and antique jhumkas. 
+              Meticulously crafted on high-grade brass and copper-alloy bases with a royal gold-plated finish. Redefining imitation luxury.
             </p>
             
             <div className="hero-actions">
@@ -249,7 +179,7 @@ export default function App() {
             lineHeight: 1.6,
             fontWeight: 300
           }}>
-            "Where ancient Indian temple carvings meet modern high-fashion aesthetics. Hand-plated in 24K gold layer, designed to capture the eternity of bridal dreams in Malad, Mumbai."
+            "Where ancient Indian temple carvings meet modern high-fashion aesthetics. Premium gold-plated imitation, designed to capture the eternity of bridal dreams in Malad, Mumbai."
           </p>
           <div className="luxury-divider" style={{ margin: '20px auto 0' }}>
             <div className="divider-line" style={{ width: '80px' }}></div>
@@ -258,12 +188,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Live Rates Section */}
-        <div style={{ backgroundColor: '#090909' }}>
-          <div className="section-container" style={{ padding: '60px 40px' }}>
-            <LiveRates rates={rates} onRateChange={setRates} />
-          </div>
-        </div>
+
 
         {/* Styling Concierge Section */}
         <StylingConcierge onSelectProduct={(product) => {
@@ -274,7 +199,6 @@ export default function App() {
 
         {/* Product Catalog */}
         <ProductCatalog 
-          rates={rates} 
           selectedProduct={selectedProduct}
           setSelectedProduct={setSelectedProduct}
           tryOnProduct={tryOnProduct}
@@ -299,8 +223,8 @@ export default function App() {
                 <span className="logo-text">KUSUM</span>
               </div>
               <p className="footer-desc">
-                Mumbai's leading boutique for premium gold-plated imitation, bridal ornaments, and temple jewelry. 
-                Redefining the luxury e-commerce experience with transparent pricing calculations and real-time market integrations.
+                Mumbai's leading boutique for premium gold-plated artificial bangles and antique jhumka earrings. 
+                Redefining the luxury e-commerce experience for premium imitation jewelry.
               </p>
             </div>
 
@@ -308,8 +232,7 @@ export default function App() {
               <h4 className="footer-title-small">Navigation</h4>
               <ul className="footer-links">
                 <li className="footer-link"><a onClick={() => scrollToSection('home')}>Welcome Portal</a></li>
-                <li className="footer-link"><a onClick={() => scrollToSection('rates')}>Market Indexes</a></li>
-                <li className="footer-link"><a onClick={() => scrollToSection('catalog')}>Bridal Collection</a></li>
+                <li className="footer-link"><a onClick={() => scrollToSection('catalog')}>Imitation Collection</a></li>
                 <li className="footer-link"><a onClick={() => scrollToSection('contact')}>Contact Info</a></li>
               </ul>
             </div>
