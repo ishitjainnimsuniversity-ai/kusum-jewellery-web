@@ -94,7 +94,7 @@ const MANUAL_PRODUCTS = [
   {
     id: 'dno_195',
     code: 'D.no-195',
-    name: 'Traditional Golden Jhumka Earrings',
+    name: 'Traditional Artificial Gold Jhumka Earrings',
     description: 'Elegant temple-style jhumka earrings featuring floral motifs, studded with green and red imitation stones, finished with delicate rows of hanging white faux pearls.',
     image: '/assets/dno_195.jpg',
     video: VIDEOS[1],
@@ -118,7 +118,7 @@ const MANUAL_PRODUCTS = [
   {
     id: 'dno_1140',
     code: 'D.no-1140',
-    name: 'Textured Gold Oval Stone Bangles',
+    name: 'Textured Artificial Gold Oval Stone Bangles',
     description: 'Set of 4 thick, heavily textured gold-colored bangles featuring oval-cut synthetic emeralds and rubies embedded in high-relief lattices.',
     image: '/assets/dno_1140.jpg',
     video: VIDEOS[4],
@@ -130,7 +130,7 @@ const MANUAL_PRODUCTS = [
   {
     id: 'dno_2240',
     code: 'D.no-2240',
-    name: 'Royal Gold Sapphire Chandelier Earrings',
+    name: 'Royal Artificial Gold Sapphire Chandelier Earrings',
     description: 'Luxurious gold-plated chandelier earrings set with deep royal blue teardrop synthetic sapphires and hanging high-quality faux pearls.',
     image: '/assets/sapphire_earrings.png',
     video: VIDEOS[4],

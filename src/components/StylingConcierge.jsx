@@ -30,7 +30,7 @@ export default function StylingConcierge({ onSelectProduct }) {
     {
       id: 'dno_2240',
       code: 'D.no-2240',
-      name: 'Gold-Plated Sapphire Chandelier Earrings',
+      name: 'Royal Artificial Gold Sapphire Chandelier Earrings',
       image: '/assets/sapphire_earrings.png',
       category: 'Earrings',
       description: 'Intricately structured chandelier drops set with royal blue sapphires and fine micro-pearls.'
