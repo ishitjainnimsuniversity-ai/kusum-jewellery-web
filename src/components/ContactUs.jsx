@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageSquare, ShieldCheck, Map } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageSquare, ShieldCheck, Map, Instagram } from 'lucide-react';
 
 export default function ContactUs() {
   const [zoomLevel, setZoomLevel] = useState(16);
@@ -67,6 +67,7 @@ export default function ContactUs() {
               <div className="contact-label" style={{ color: 'var(--primary-gold)', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Inquiries & Direct Orders</div>
               <div className="contact-text" style={{ color: '#ffffff', fontSize: '0.95rem', lineHeight: '1.6' }}>
                 <a href="tel:+919372822884" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: 600 }}>+91 93728 22884</a><br />
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginTop: '6px' }}>
                 <a 
                   href="https://wa.me/919372822884" 
                   target="_blank" 
@@ -78,13 +79,36 @@ export default function ContactUs() {
                     color: '#25D366',
                     textDecoration: 'none',
                     fontWeight: 600,
-                    marginTop: '6px',
                     fontSize: '0.9rem',
-                    textShadow: '0 0 10px rgba(37, 211, 102, 0.2)'
+                    textShadow: '0 0 10px rgba(37, 211, 102, 0.2)',
+                    transition: 'opacity 0.2s'
                   }}
+                  onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                  onMouseLeave={e => e.currentTarget.style.opacity = '1'}
                 >
                   <MessageSquare size={14} fill="#25D366" style={{ color: '#fff' }} /> Message on WhatsApp
                 </a>
+                <a 
+                  href="https://www.instagram.com/kusum.imitation?igsh=MXE2MTFyZ2d1ODJ6bw==" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: '#E1306C',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.9rem',
+                    textShadow: '0 0 10px rgba(225, 48, 108, 0.2)',
+                    transition: 'opacity 0.2s'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                  onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                >
+                  <Instagram size={14} fill="#E1306C" style={{ color: '#fff' }} /> Follow on Instagram
+                </a>
+              </div>
               </div>
             </div>
           </div>

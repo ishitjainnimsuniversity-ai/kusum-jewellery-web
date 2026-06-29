@@ -6,7 +6,7 @@ import StylingConcierge from './components/StylingConcierge';
 import CareGuide from './components/CareGuide';
 import OwnerLogin from './components/OwnerLogin';
 import OwnerDashboard, { loadNewArrivals } from './components/OwnerDashboard';
-import { Sparkles, MessageCircle, MapPin, Award, Info, Diamond, Lock } from 'lucide-react';
+import { Sparkles, MessageCircle, MapPin, Award, Info, Diamond, Lock, Instagram } from 'lucide-react';
 
 export default function App() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -226,6 +226,27 @@ export default function App() {
                 Mumbai's leading boutique for premium gold-plated artificial bangles and antique jhumka earrings. 
                 Redefining the luxury e-commerce experience for premium imitation jewelry.
               </p>
+              <a 
+                href="https://www.instagram.com/kusum.imitation?igsh=MXE2MTFyZ2d1ODJ6bw==" 
+                target="_blank" 
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: '#E1306C',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  marginTop: '10px',
+                  fontSize: '0.85rem',
+                  textShadow: '0 0 10px rgba(225, 48, 108, 0.15)',
+                  transition: 'opacity 0.2s'
+                }}
+                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+              >
+                <Instagram size={14} /> Follow us on Instagram
+              </a>
             </div>
 
             <div>
